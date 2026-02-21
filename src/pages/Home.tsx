@@ -59,8 +59,8 @@ export default function Home() {
           <Navbar />
         </header>
 
-        <section className="border-t border-border pt-24">
-          <h2 className="text-sm uppercase tracking-[0.3em] text-muted-foreground text-center mb-16">
+        <section className="border-t border-border pt-16">
+          <h2 className="text-sm uppercase font-mono text-muted-foreground text-center mb-16">
             Partners
           </h2>
 
