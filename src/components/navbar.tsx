@@ -1,6 +1,8 @@
-import { FaDiscord } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { BrandLogo } from "./brand-logo";
+import { Book02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 export function Navbar() {
   return (
@@ -12,6 +14,7 @@ export function Navbar() {
       </Button>
       <Button variant="outline" asChild size="lg">
         <a href="https://dupe.today" target="_blank" rel="noopener noreferrer">
+          <HugeiconsIcon icon={Book02Icon} />
           Docs
         </a>
       </Button>
@@ -21,12 +24,14 @@ export function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaDiscord className="text-[#5865f2]" />
+          <BrandLogo platform="DISCORD" />
           Discord
         </a>
       </Button>
       <Button asChild size="lg">
-        <Link to="/mods">Mods</Link>
+        <Link to="/mods">
+          Mods
+        </Link>
       </Button>
     </div>
   );

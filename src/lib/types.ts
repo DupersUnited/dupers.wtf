@@ -14,3 +14,19 @@ export interface Contributor {
   avatar_url: string;
   contributions: number;
 }
+
+export interface Partner {
+  name: string;
+  type: PartnerPlatform;
+  tag: string;
+  iconUrl: string;
+  url: string;
+}
+
+export const PartnerPlatform = {
+  YOUTUBE: "YOUTUBE",
+  TWITCH: "TWITCH",
+  DISCORD: "DISCORD"
+} as const;
+
+export type PartnerPlatform = typeof PartnerPlatform[keyof typeof PartnerPlatform];

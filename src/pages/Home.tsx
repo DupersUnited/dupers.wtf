@@ -1,44 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { FaYoutube } from "react-icons/fa";
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import { DUText } from "@/components/DUText";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
+import { DUText } from "@/components/du-text";
+import { PARTNERS } from "@/lib/data";
+import { BrandLogo } from "@/components/brand-logo";
 
-const partners = [
-  {
-    name: "The Duper Trooper",
-    tag: "@TheDuperTrooper",
-    iconUrl:
-      "https://yt3.googleusercontent.com/ytc/AIdro_kYrSpiQ8-QHVlr8EfRZXwAxkPqCoTmip7eQUDBDNJqkVc=s72-c-k-c0x00ffffff-no-rj",
-    url: "https://youtube.com/@TheDuperTrooper"
-  },
-  {
-    name: "TheMisterEpic",
-    tag: "@TheMisterEpic",
-    iconUrl:
-      "https://yt3.googleusercontent.com/ytc/AIdro_moAuemmWPwA-vT4XgOnm_rfYuhM3cA8pvtZmcTJgCG6ck=s72-c-k-c0x00ffffff-no-rj",
-    url: "https://youtube.com/@TheMisterEpic"
-  },
-  {
-    name: "The Horizon",
-    tag: "@The_Horizon",
-    iconUrl:
-      "https://yt3.googleusercontent.com/ytc/AIdro_kBEjUgFYQ0RVyh1z5R4XFnUnzF3rdj_M0H0PQgLXF_6w=s72-c-k-c0x00ffffff-no-rj",
-    url: "https://youtube.com/@The_Horizon"
-  },
-  {
-    name: "Dupers United",
-    tag: "@dupersunited",
-    iconUrl:
-      "https://yt3.googleusercontent.com/hiHhWgJhjXp5opFqRLF5HpGZM18OI5-I0f3kFlm1Et7--KOovuPD4c39li4wZgywdLkQflhpJQ=s72-c-k-c0x00ffffff-no-rj",
-    url: "https://youtube.com/@dupersunited"
-  },
-];
-
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="fixed top-4 right-4 z-50">
@@ -65,7 +35,7 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {partners.map((partner) => (
+            {PARTNERS.map((partner) => (
               <a
                 key={partner.name}
                 href={partner.url}
@@ -91,7 +61,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <FaYoutube size={32} className="text-red-500" />
+                      <BrandLogo platform={partner.type} size={32} />
                       <HugeiconsIcon icon={LinkSquare01Icon} />
                     </div>
                   </CardContent>

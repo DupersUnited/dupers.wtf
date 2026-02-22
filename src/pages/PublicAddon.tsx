@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import { DUText } from "@/components/DUText";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
+import { DUText } from "@/components/du-text";
 import type { Contributor } from "@/lib/types";
 
 const REPO = "DupersUnited/du-public-addon";
 
-export default function PublicAddon() {
+export default function PublicAddonPage() {
   const [contributors, setContributors] = useState<Contributor[]>([]);
 
   useEffect(() => {

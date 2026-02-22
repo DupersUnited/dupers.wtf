@@ -1,69 +1,17 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { FaGithub } from "react-icons/fa";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import { DUText } from "@/components/DUText";
-import type { Mod } from "@/lib/types";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
+import { DUText } from "@/components/du-text";
 import { Badge } from "@/components/ui/badge";
+import { MODS } from "@/lib/data";
 
-const mods: Mod[] = [
-  {
-    name: "Fabric API",
-    description: "Essential hooks for modding with Fabric.",
-    iconUrl: "https://cdn.modrinth.com/data/P7dR8mSH/icon.png",
-    downloadUrl: "https://modrinth.com/mod/fabric-api#download",
-    sourceUrl: "https://github.com/FabricMC/fabric-api",
-  },
-  {
-    name: "Meteor Client",
-    description:
-      "The base client for Minecraft utility mods. Required for the DupersUnited Addon.",
-    iconUrl: "https://meteorclient.com/icon.png",
-    downloadUrl: "https://meteorclient.com/",
-    sourceUrl: "https://github.com/MeteorDevelopment/meteor-client",
-  },
-  {
-    name: "UI Util",
-    description:
-      "Manipulate GUIs, close them without packets, save and load them, and more.",
-    iconUrl: "https://ui-utils.com/content/ui-utils.png",
-    downloadUrl: "https://www.curseforge.com/minecraft/mc-mods/uiutils",
-    sourceUrl: "https://github.com/Coderx-Gamer/ui-utils",
-  },
-  {
-    name: "DupersUnited Addon",
-    description:
-      "A Meteor addon with useful modules and commands for dupe hunting.",
-    iconUrl: "/assets/logo.png",
-    downloadUrl: "/public-addon",
-    sourceUrl: "https://github.com/DupersUnited/du-public-addon",
-    official: true,
-    disabled: true,
-  },
-  {
-    name: "Pay Everyone Mod",
-    description: "Useful for mass-paying players to distribute money.",
-    iconUrl:
-      "https://cdn.modrinth.com/data/EJO20Qp6/02887dbd66f1009ffaf3fb3acabf990c49ec6198_96.webp",
-    downloadUrl: "https://modrinth.com/mod/payeveryone#download",
-    sourceUrl: "https://github.com/aurickk/Pay-Everyone",
-  },
-  {
-    name: "PathMind",
-    description: "Used to automate tasks with a simple node system!",
-    iconUrl:
-      "https://cdn.modrinth.com/data/GX0d78rL/c059e4980c36c5f72dfa6c0832ba52d13b2d3304.png",
-    downloadUrl: "https://modrinth.com/mod/pathmind#download",
-    sourceUrl: "https://github.com/soymods/pathmind",
-  },
-];
-
-export default function Mods() {
+export default function ModsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="fixed top-4 right-4 z-50">
@@ -98,7 +46,7 @@ export default function Mods() {
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {mods.map((mod) => (
+            {MODS.map((mod) => (
               <Card
                 key={mod.name}
                 className={`bg-card border-border ${mod.official ? "border-primary" : ""}`}
