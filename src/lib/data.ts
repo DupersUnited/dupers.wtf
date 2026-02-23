@@ -7,7 +7,7 @@ export const PARTNERS: Partner[] = [
     tag: "@TheDuperTrooper",
     iconUrl:
       "https://yt3.googleusercontent.com/ytc/AIdro_kYrSpiQ8-QHVlr8EfRZXwAxkPqCoTmip7eQUDBDNJqkVc=s72-c-k-c0x00ffffff-no-rj",
-    url: "https://youtube.com/@TheDuperTrooper"
+    url: "https://youtube.com/@TheDuperTrooper",
   },
   {
     name: "TheMisterEpic",
@@ -15,7 +15,7 @@ export const PARTNERS: Partner[] = [
     tag: "@TheMisterEpic",
     iconUrl:
       "https://yt3.googleusercontent.com/ytc/AIdro_moAuemmWPwA-vT4XgOnm_rfYuhM3cA8pvtZmcTJgCG6ck=s72-c-k-c0x00ffffff-no-rj",
-    url: "https://youtube.com/@TheMisterEpic"
+    url: "https://youtube.com/@TheMisterEpic",
   },
   {
     name: "The Horizon",
@@ -23,7 +23,7 @@ export const PARTNERS: Partner[] = [
     tag: "@The_Horizon",
     iconUrl:
       "https://yt3.googleusercontent.com/ytc/AIdro_kBEjUgFYQ0RVyh1z5R4XFnUnzF3rdj_M0H0PQgLXF_6w=s72-c-k-c0x00ffffff-no-rj",
-    url: "https://youtube.com/@The_Horizon"
+    url: "https://youtube.com/@The_Horizon",
   },
   {
     name: "Dupers United",
@@ -31,7 +31,7 @@ export const PARTNERS: Partner[] = [
     tag: "@dupersunited",
     iconUrl:
       "https://yt3.googleusercontent.com/hiHhWgJhjXp5opFqRLF5HpGZM18OI5-I0f3kFlm1Et7--KOovuPD4c39li4wZgywdLkQflhpJQ=s72-c-k-c0x00ffffff-no-rj",
-    url: "https://youtube.com/@dupersunited"
+    url: "https://youtube.com/@dupersunited",
   },
 ];
 
@@ -45,19 +45,17 @@ export const MODS: Mod[] = [
   },
   {
     name: "Meteor Client",
-    description:
-      "The base client for Minecraft utility mods. Required for the DupersUnited Addon.",
+    description: "Based Minecraft utility mod.",
     iconUrl: "https://meteorclient.com/icon.png",
     downloadUrl: "https://meteorclient.com/",
     sourceUrl: "https://github.com/MeteorDevelopment/meteor-client",
   },
   {
-    name: "UI Util",
+    name: "UI Utils",
     description:
-      "Manipulate GUIs, close them without packets, save and load them, and more.",
+      "UI-Utils is a mod for debugging plugins, by adding extra capabilities to your client.",
     iconUrl: "https://ui-utils.com/content/ui-utils.png",
     downloadUrl: "https://www.curseforge.com/minecraft/mc-mods/uiutils",
-    sourceUrl: "https://github.com/Coderx-Gamer/ui-utils",
   },
   {
     name: "DupersUnited Addon",
@@ -71,7 +69,8 @@ export const MODS: Mod[] = [
   },
   {
     name: "Pay Everyone Mod",
-    description: "Useful for mass-paying players to distribute money.",
+    description:
+      "A client-side Fabric mod that could scan and pay all online players on multiplayer servers with a GUI.",
     iconUrl:
       "https://cdn.modrinth.com/data/EJO20Qp6/02887dbd66f1009ffaf3fb3acabf990c49ec6198_96.webp",
     downloadUrl: "https://modrinth.com/mod/payeveryone#download",
@@ -79,7 +78,8 @@ export const MODS: Mod[] = [
   },
   {
     name: "PathMind",
-    description: "Used to automate tasks with a simple node system!",
+    description:
+      "A visual sandbox for designing automation workflows in Minecraft",
     iconUrl:
       "https://cdn.modrinth.com/data/GX0d78rL/c059e4980c36c5f72dfa6c0832ba52d13b2d3304.png",
     downloadUrl: "https://modrinth.com/mod/pathmind#download",

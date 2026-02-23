@@ -3,7 +3,7 @@ export interface Mod {
   description: string
   iconUrl: string;
   downloadUrl: string;
-  sourceUrl: string;
+  sourceUrl?: string;
   official?: boolean;
   disabled?: boolean;
 }
