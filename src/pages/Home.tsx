@@ -16,7 +16,7 @@ export default function HomePage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-8 py-24">
-        <header className="text-center mb-24">
+        <header className="text-center mb-16">
           <DUText />
 
           <p className="text-xl text-muted-foreground mb-3">
@@ -30,7 +30,7 @@ export default function HomePage() {
         </header>
 
         <section className="border-t border-border pt-16">
-          <h2 className="text-sm uppercase font-mono text-muted-foreground text-center mb-16">
+          <h2 className="uppercase font-mono text-muted-foreground text-center mb-8">
             Partners
           </h2>
 

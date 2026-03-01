@@ -18,7 +18,7 @@ export default function ModsPage() {
         <ThemeToggle />
       </div>
 
-      <div className="max-w-5xl mx-auto px-8 py-24">
+      <div className="max-w-5xl mx-auto p-8">
         <Link
           to="/"
           className="text-muted-foreground hover:text-foreground text-sm mb-8 inline-block"
@@ -26,10 +26,10 @@ export default function ModsPage() {
           ← Back to Home
         </Link>
 
-        <header className="text-center mb-24">
+        <header className="text-center mb-16">
           <DUText />
 
-          <p className="text-sm uppercase font-mono text-muted-foreground mb-6">
+          <p className="text-sm uppercase font-mono text-muted-foreground mb-2">
             Mods for Duping
           </p>
 
@@ -41,7 +41,7 @@ export default function ModsPage() {
         </header>
 
         <section className="border-t border-border pt-16">
-          <h2 className="text-sm uppercase font-mono text-muted-foreground text-center mb-16">
+          <h2 className="uppercase font-mono text-muted-foreground text-center mb-8">
             Essential Mods
           </h2>
 
