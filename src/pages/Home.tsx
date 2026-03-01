@@ -15,7 +15,7 @@ export default function HomePage() {
         <ThemeToggle />
       </div>
 
-      <div className="max-w-5xl mx-auto px-8 py-24">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 md:py-24">
         <header className="text-center mb-16">
           <DUText />
 

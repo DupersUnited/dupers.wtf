@@ -6,7 +6,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 
 export function Navbar() {
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
       <Button variant="outline" asChild size="lg">
         <a href="https://dupedb.net" target="_blank" rel="noopener noreferrer">
           DupeDB

@@ -32,7 +32,7 @@ export default function PublicAddonPage() {
         <ThemeToggle />
       </div>
 
-      <div className="max-w-5xl mx-auto px-8 py-24">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 md:py-24">
         <Link to="/mods" className="text-muted-foreground hover:text-foreground text-sm mb-8 inline-block">
           ← Back to Mods
         </Link>
