@@ -85,4 +85,11 @@ export const MODS: Mod[] = [
     downloadUrl: "https://modrinth.com/mod/pathmind#download",
     sourceUrl: "https://github.com/soymods/pathmind",
   },
+  {
+    name: "CatAddons",
+    description: "A Minecraft 1.21.10 Fabric mod to help debug plugins and servers.",
+    iconUrl: "https://raw.githubusercontent.com/vinzy-dev/CatAddonsPublic/main/src/main/resources/assets/cataddons/icon.png",
+    downloadUrl: "https://github.com/vinzy-dev/CatAddonsPublic/releases/latest",
+    sourceUrl: "https://github.com/vinzy-dev/CatAddonsPublic",
+  }
 ];
