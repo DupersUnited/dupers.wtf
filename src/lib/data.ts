@@ -26,7 +26,7 @@ export const PARTNERS: Partner[] = [
     url: "https://youtube.com/@The_Horizon",
   },
   {
-    name: "Dupers United",
+    name: "DupersUnited",
     type: PartnerPlatform.YOUTUBE,
     tag: "@dupersunited",
     iconUrl:
