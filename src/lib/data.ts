@@ -76,15 +76,6 @@ export const MODS: Mod[] = [
     downloadUrl: "https://modrinth.com/mod/payeveryone#download",
     sourceUrl: "https://github.com/aurickk/Pay-Everyone",
   },
-  {
-    name: "PathMind",
-    description:
-      "A visual sandbox for designing automation workflows in Minecraft",
-    iconUrl:
-      "https://cdn.modrinth.com/data/GX0d78rL/c059e4980c36c5f72dfa6c0832ba52d13b2d3304.png",
-    downloadUrl: "https://modrinth.com/mod/pathmind#download",
-    sourceUrl: "https://github.com/soymods/pathmind",
-  },
   // {
   //   name: "CatAddons",
   //   description: "A Minecraft 1.21.10 Fabric mod to help debug plugins and servers.",
