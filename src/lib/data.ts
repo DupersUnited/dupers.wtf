@@ -37,6 +37,15 @@ export const PARTNERS: Partner[] = [
 
 export const MODS: Mod[] = [
   {
+    name: "DupersUnited Mod",
+    description:
+      "An all-in-one duping and bug-hunting mod with useful modules and commands for exploiting duplication glitches.",
+    iconUrl: "/assets/logo.png",
+    downloadUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    sourceUrl: "https://github.com/DupersUnited/dupersunited-public",
+    official: true,
+  },
+  {
     name: "Fabric API",
     description: "Essential hooks for modding with Fabric.",
     iconUrl: "https://cdn.modrinth.com/data/P7dR8mSH/icon.png",
@@ -44,37 +53,27 @@ export const MODS: Mod[] = [
     sourceUrl: "https://github.com/FabricMC/fabric-api",
   },
   {
+    name: "UI Utils",
+    description:
+    "UI-Utils is a mod for debugging plugins, by adding extra capabilities to your client.",
+    iconUrl: "https://ui-utils.com/content/ui-utils.png",
+    downloadUrl: "https://www.curseforge.com/minecraft/mc-mods/uiutils",
+  },
+  {
+    name: "Pay Everyone Mod",
+    description:
+    "A client-side Fabric mod that could scan and pay all online players on multiplayer servers with a GUI.",
+    iconUrl:
+    "https://cdn.modrinth.com/data/EJO20Qp6/02887dbd66f1009ffaf3fb3acabf990c49ec6198_96.webp",
+    downloadUrl: "https://modrinth.com/mod/payeveryone#download",
+    sourceUrl: "https://github.com/aurickk/Pay-Everyone",
+  },
+  {
     name: "Meteor Client",
     description: "Based Minecraft utility mod.",
     iconUrl: "https://meteorclient.com/icon.png",
     downloadUrl: "https://meteorclient.com/",
     sourceUrl: "https://github.com/MeteorDevelopment/meteor-client",
-  },
-  {
-    name: "UI Utils",
-    description:
-      "UI-Utils is a mod for debugging plugins, by adding extra capabilities to your client.",
-    iconUrl: "https://ui-utils.com/content/ui-utils.png",
-    downloadUrl: "https://www.curseforge.com/minecraft/mc-mods/uiutils",
-  },
-  {
-    name: "DupersUnited Addon",
-    description:
-      "A Meteor addon with useful modules and commands for dupe hunting.",
-    iconUrl: "/assets/logo.png",
-    downloadUrl: "/public-addon",
-    sourceUrl: "https://github.com/DupersUnited/du-public-addon",
-    official: true,
-    disabled: true,
-  },
-  {
-    name: "Pay Everyone Mod",
-    description:
-      "A client-side Fabric mod that could scan and pay all online players on multiplayer servers with a GUI.",
-    iconUrl:
-      "https://cdn.modrinth.com/data/EJO20Qp6/02887dbd66f1009ffaf3fb3acabf990c49ec6198_96.webp",
-    downloadUrl: "https://modrinth.com/mod/payeveryone#download",
-    sourceUrl: "https://github.com/aurickk/Pay-Everyone",
   },
   // {
   //   name: "CatAddons",

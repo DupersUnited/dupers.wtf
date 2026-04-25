@@ -49,7 +49,7 @@ export default function ModsPage() {
             {MODS.map((mod) => (
               <Card
                 key={mod.name}
-                className={`bg-card border-border ${mod.official ? "border-primary" : ""}`}
+                className={`bg-card border-border ${mod.official ? "ring-2 ring-yellow-400 col-span-2" : ""}`}
               >
                 <CardContent className="flex gap-4 p-4">
                   <img
