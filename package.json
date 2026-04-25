@@ -8,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "bun run build",
-    "upload": "ssh root@100.66.97.15 rm -rf /var/www/dupers.wtf/* && scp -r dist/* root@100.66.97.15:/var/www/dupers.wtf/"
+    "deploy": "bun run build && ssh root@du-vps rm -rf /var/www/dupers.wtf/* && scp -r dist/* root@du-vps:/var/www/dupers.wtf/"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
