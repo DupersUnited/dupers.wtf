@@ -1,1 +1,4 @@
 # dupers.wtf
+
+## License
+MIT
