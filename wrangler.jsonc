@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "duperswtf",
-  "compatibility_date": "2026-02-22",
+  "name": "dupers-wtf",
+  "compatibility_date": "2026-06-27",
   "workers_dev": false,
   "assets": {
     "directory": "./dist"
