@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "wrangler deploy"
+    "deploy": "bun run build && wrangler deploy"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.3.0",
