@@ -3,13 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { FaGithub } from "react-icons/fa";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { DUText } from "@/components/du-text";
 import { Badge } from "@/components/ui/badge";
 import { MODS } from "@/lib/data";
+import { ExternalLink } from "lucide-react";
 
 export default function ModsPage() {
   return (
@@ -107,7 +106,7 @@ export default function ModsPage() {
                           >
                             <FaGithub />
                             Source
-                            <HugeiconsIcon icon={LinkSquare01Icon} />
+                            <ExternalLink />
                           </a>
                         </Button>
                       )}

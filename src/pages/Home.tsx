@@ -1,12 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { LinkSquare01Icon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { DUText } from "@/components/du-text";
 import { PARTNERS } from "@/lib/data";
 import { BrandLogo } from "@/components/brand-logo";
+import { ExternalLink } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -62,7 +61,7 @@ export default function HomePage() {
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                       <BrandLogo platform={partner.type} size={32} />
-                      <HugeiconsIcon icon={LinkSquare01Icon} />
+                      <ExternalLink />
                     </div>
                   </CardContent>
                 </Card>
