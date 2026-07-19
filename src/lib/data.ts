@@ -58,6 +58,7 @@ export const MODS: Mod[] = [
     "UI-Utils is a mod for debugging plugins, by adding extra capabilities to your client.",
     iconUrl: "https://ui-utils.com/content/ui-utils.png",
     downloadUrl: "https://www.curseforge.com/minecraft/mc-mods/uiutils",
+    sourceUrl: "https://github.com/MrBreakNFix/ui-utils"
   },
   {
     name: "Pay Everyone Mod",
