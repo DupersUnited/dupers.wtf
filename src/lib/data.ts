@@ -41,7 +41,7 @@ export const MODS: Mod[] = [
     description:
       "An all-in-one duping and bug-hunting mod with useful modules and commands for exploiting duplication glitches.",
     iconUrl: "/assets/logo.png",
-    downloadUrl: "https://discord.gg/dupes",
+    downloadUrl: "/dupersunited",
     sourceUrl: "https://github.com/DupersUnited/dupersunited-mod",
     official: true,
   },

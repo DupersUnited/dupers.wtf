@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/Home";
 import ModsPage from "./pages/Mods";
+import DupersUnitedPage from "./pages/DupersUnited";
 import { ThemeProvider } from "@/components/theme-provider"
 
 export function App() {
@@ -10,6 +11,7 @@ export function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/mods" element={<ModsPage />} />
+          <Route path="/dupersunited" element={<DupersUnitedPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>

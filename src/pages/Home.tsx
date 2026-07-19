@@ -14,14 +14,14 @@ export default function HomePage() {
         <ThemeToggle />
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <header className="text-center mb-16">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-20">
+        <header className="text-center mb-20">
           <DUText />
 
           <p className="text-xl text-muted-foreground mb-3">
             We break the economy to fix the game.
           </p>
-          <p className="text-lg text-muted-foreground/80 mb-16">
+          <p className="text-base text-muted-foreground/70 mb-12 max-w-2xl mx-auto">
             Taking a stand against predatory P2W gambling.
           </p>
 
@@ -29,7 +29,7 @@ export default function HomePage() {
         </header>
 
         <section className="border-t border-border pt-16">
-          <h2 className="uppercase font-mono text-muted-foreground text-center mb-8">
+          <h2 className="uppercase font-mono text-xs tracking-widest text-muted-foreground text-center mb-12">
             Partners
           </h2>
 
@@ -40,27 +40,27 @@ export default function HomePage() {
                 href={partner.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block"
+                className="block group"
               >
-                <Card className="bg-card border-border hover:bg-accent transition-colors cursor-pointer">
+                <Card className="bg-card border-border hover:border-foreground/20 hover:bg-accent/30 transition-all cursor-pointer">
                   <CardContent className="flex items-center justify-between p-4">
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 min-w-0">
                       <img
                         src={partner.iconUrl}
                         alt={partner.name}
-                        className="size-16 rounded-lg object-cover border border-border"
+                        className="size-14 rounded-lg object-cover border border-border shrink-0"
                       />
-                      <div className="text-left">
-                        <h3 className="font-medium text-card-foreground">
+                      <div className="text-left min-w-0">
+                        <h3 className="font-medium text-card-foreground text-sm">
                           {partner.name}
                         </h3>
-                        <p className="text-muted-foreground text-sm">
+                        <p className="text-muted-foreground text-xs">
                           {partner.tag}
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <BrandLogo platform={partner.type} size={32} />
+                    <div className="flex items-center gap-2 text-muted-foreground shrink-0">
+                      <BrandLogo platform={partner.type} size={24} />
                       <ExternalLink />
                     </div>
                   </CardContent>

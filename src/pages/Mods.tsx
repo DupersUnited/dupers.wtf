@@ -17,22 +17,22 @@ export default function ModsPage() {
         <ThemeToggle />
       </div>
 
-      <div className="max-w-5xl mx-auto p-4 md:p-8">
+      <div className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-20">
         <Link
           to="/"
-          className="text-muted-foreground hover:text-foreground text-sm mb-8 inline-block"
+          className="text-muted-foreground hover:text-foreground text-xs mb-10 inline-block uppercase font-mono tracking-widest"
         >
-          ← Back to Home
+          ← Back
         </Link>
 
-        <header className="text-center mb-16">
+        <header className="text-center mb-20">
           <DUText />
 
-          <p className="text-sm uppercase font-mono text-muted-foreground mb-2">
-            Mods for Duping
+          <p className="text-xs uppercase font-mono tracking-widest text-muted-foreground mb-3">
+            Essential Mods
           </p>
 
-          <p className="text-lg text-muted-foreground mb-12 max-w-md mx-auto">
+          <p className="text-base text-muted-foreground mb-12 max-w-md mx-auto">
             Everything you need to start dupe hunting in Minecraft.
           </p>
 
@@ -40,15 +40,17 @@ export default function ModsPage() {
         </header>
 
         <section className="border-t border-border pt-16">
-          <h2 className="uppercase font-mono text-muted-foreground text-center mb-8">
-            Essential Mods
+          <h2 className="uppercase font-mono text-xs tracking-widest text-muted-foreground text-center mb-12">
+            Mods
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             {MODS.map((mod) => (
               <Card
                 key={mod.name}
-                className={`bg-card border-border ${mod.official ? "ring-2 ring-yellow-400 col-span-2" : ""}`}
+                className={`bg-card border-border hover:border-foreground/20 transition-colors ${
+                  mod.official ? "ring-2 ring-yellow-400" : ""
+                }`}
               >
                 <CardContent className="flex gap-4 p-4">
                   <img
@@ -60,17 +62,19 @@ export default function ModsPage() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
                       <h3
-                        className={`font-medium ${mod.disabled ? "text-muted-foreground" : "text-card-foreground"}`}
+                        className={`font-medium text-sm ${
+                          mod.disabled
+                            ? "text-muted-foreground"
+                            : "text-card-foreground"
+                        }`}
                       >
                         {mod.name}
                       </h3>
                       {mod.official && (
-                        <Badge className="font-mono text-xs">
-                          Official
-                        </Badge>
+                        <Badge className="font-mono text-xs">Official</Badge>
                       )}
                     </div>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                    <p className="text-muted-foreground text-xs mb-3 line-clamp-2">
                       {mod.description}
                     </p>
 
@@ -83,7 +87,9 @@ export default function ModsPage() {
                         <a
                           href={mod.disabled ? "#" : mod.downloadUrl}
                           target={
-                            mod.downloadUrl.startsWith("/") ? "_self" : "_blank"
+                            mod.downloadUrl.startsWith("/")
+                              ? "_self"
+                              : "_blank"
                           }
                           rel="noopener noreferrer"
                         >
