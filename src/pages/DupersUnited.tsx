@@ -1,9 +1,12 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { DUText } from "@/components/du-text";
+import { Reveal } from "@/components/reveal";
 import { LatestVersionCard } from "@/components/dupersunited/latest-version-card";
 import { VersionCard } from "@/components/dupersunited/version-card";
 import { McVersionSelector } from "@/components/dupersunited/mc-version-selector";
@@ -15,9 +18,29 @@ import {
   MAVEN_BASE,
 } from "@/lib/maven";
 
+const PAGE_SIZE = 8;
+
+const INSTALL_STEPS = [
+  {
+    title: "Match your game version",
+    body: "Use the Minecraft version filter below so you only see builds made for your game. When in doubt, update the game and take the latest build.",
+  },
+  {
+    title: "Install Fabric first",
+    body: "You need Fabric Loader plus Fabric API before this mod will load.",
+    link: { to: "/mods", label: "Get Fabric API on the Mods page" },
+  },
+  {
+    title: "Drop the .jar in your mods folder",
+    body: "Windows: %appdata%/.minecraft/mods · macOS: ~/Library/Application Support/minecraft/mods · Linux: ~/.minecraft/mods — then launch the Fabric profile.",
+  },
+];
+
 export default function DupersUnitedPage() {
   const { versions, latest, release, loading, error } = useMavenVersions();
-  const [selectedMc, setSelectedMc] = useState<string>("all");
+  // null = user hasn't picked yet → default to newest MC version once loaded
+  const [selectedMc, setSelectedMc] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const mcVersion = useMemo(() => extractMcVersion(latest), [latest]);
 
@@ -26,47 +49,64 @@ export default function DupersUnitedPage() {
     [versions]
   );
 
-  useEffect(() => {
-    setSelectedMc("all");
-  }, [mcVersions]);
+  const effectiveMc = selectedMc ?? mcVersions[0] ?? "all";
+
+  const handleMcChange = (v: string) => {
+    setSelectedMc(v);
+    setShowAll(false);
+  };
 
   const visibleVersions = useMemo(() => {
-    if (selectedMc === "all") return versions;
-    return versions.filter((v) => v.version.endsWith(`+${selectedMc}`));
-  }, [versions, selectedMc]);
+    if (effectiveMc === "all") return versions;
+    return versions.filter((v) => v.version.endsWith(`+${effectiveMc}`));
+  }, [versions, effectiveMc]);
+
+  const shownVersions = showAll
+    ? visibleVersions
+    : visibleVersions.slice(0, PAGE_SIZE);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="fixed top-4 right-4 z-50">
-        <ThemeToggle />
-      </div>
+      <Navbar />
 
-      <div className="max-w-5xl mx-auto px-4 md:px-8 py-12 md:py-20">
-        <Link
-          to="/"
-          className="text-muted-foreground hover:text-foreground text-xs mb-10 inline-block uppercase font-mono tracking-widest"
-        >
-          ← Back
-        </Link>
+      <div className="mx-auto max-w-5xl px-4 md:px-8">
+        <section className="flex flex-col items-center gap-8 py-16 md:py-20">
+          <Reveal>
+            <DUText title="Pick a version and start dupe hunting." />
+          </Reveal>
+          {latest && (
+            <Reveal delay={120}>
+              <div className="flex flex-col items-center gap-3 sm:flex-row">
+                <Button size="lg" asChild>
+                  <a
+                    href={`${MAVEN_BASE}/${encodeURIComponent(latest)}/dupersunited-${encodeURIComponent(latest)}.jar`}
+                  >
+                    <Download data-icon="inline-end" />
+                    Download latest
+                  </a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <a
+                    href="https://github.com/DupersUnited/dupersunited-mod"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source
+                  </a>
+                </Button>
+              </div>
+            </Reveal>
+          )}
+        </section>
 
-        <header className="text-center mb-20">
-          <DUText />
+        <Separator />
 
-          <p className="text-xs uppercase font-mono tracking-widest text-muted-foreground mb-3">
-            DupersUnited Mod
-          </p>
-
-          <p className="text-base text-muted-foreground mb-12 max-w-md mx-auto">
-            Pick a version and start dupe hunting.
-          </p>
-
-          <Navbar />
-        </header>
-
-        <section className="border-t border-border pt-16">
-          <h2 className="uppercase font-mono text-xs tracking-widest text-muted-foreground text-center mb-12">
-            Downloads
-          </h2>
+        <section className="mx-auto max-w-3xl py-14">
+          <Reveal>
+            <p className="mb-8 text-center font-mono text-xs tracking-widest text-muted-foreground uppercase">
+              Downloads
+            </p>
+          </Reveal>
 
           <LoadingState
             isLoading={loading}
@@ -84,22 +124,74 @@ export default function DupersUnitedPage() {
 
           <McVersionSelector
             versions={mcVersions}
-            selectedVersion={selectedMc}
-            onVersionChange={setSelectedMc}
+            selectedVersion={effectiveMc}
+            onVersionChange={handleMcChange}
+            total={visibleVersions.length}
           />
 
-          <div className="grid grid-cols-1 gap-4">
-            {visibleVersions.map((v) => {
-              const mc = extractMcVersion(v.version);
-              return (
+          <div>
+            {shownVersions.map((v, i) => (
+              <div key={v.version}>
+                {i > 0 && <Separator />}
                 <VersionCard
-                  key={v.version}
                   versionInfo={v}
-                  mcVersion={mc}
+                  mcVersion={extractMcVersion(v.version)}
                   isRelease={v.version === release}
                 />
-              );
-            })}
+              </div>
+            ))}
+          </div>
+
+          {!loading && !error && visibleVersions.length > PAGE_SIZE && (
+            <div className="flex justify-center pt-6">
+              <Button
+                variant="ghost"
+                onClick={() => setShowAll((s) => !s)}
+              >
+                {showAll
+                  ? "Show fewer builds"
+                  : `Show all ${visibleVersions.length} builds`}
+              </Button>
+            </div>
+          )}
+
+          {!loading && !error && visibleVersions.length === 0 && (
+            <p className="py-12 text-center text-sm text-muted-foreground">
+              No builds for that Minecraft version yet — try “All versions” or{" "}
+              <Link to="/mods" className="underline underline-offset-4">
+                browse the rest of the kit
+              </Link>
+              .
+            </p>
+          )}
+        </section>
+
+        <Separator />
+
+        <section className="mx-auto max-w-3xl py-14">
+          <p className="mb-8 text-center font-mono text-xs tracking-widest text-muted-foreground uppercase">
+            Install in 3 steps
+          </p>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {INSTALL_STEPS.map((s, i) => (
+              <Reveal key={s.title} delay={i * 100}>
+                <div className="flex flex-col gap-2">
+                  <span className="font-mono text-xs text-muted-foreground">
+                    0{i + 1}
+                  </span>
+                  <h2 className="font-medium">{s.title}</h2>
+                  <p className="text-sm text-muted-foreground">{s.body}</p>
+                  {s.link && (
+                    <Link
+                      to={s.link.to}
+                      className="text-sm underline underline-offset-4"
+                    >
+                      {s.link.label}
+                    </Link>
+                  )}
+                </div>
+              </Reveal>
+            ))}
           </div>
         </section>
 

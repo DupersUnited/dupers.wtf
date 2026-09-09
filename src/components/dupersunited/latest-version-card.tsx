@@ -1,7 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
+import { Check, Copy, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Box, Download, ExternalLink } from "lucide-react";
 
 interface LatestVersionCardProps {
   version: string;
@@ -14,50 +14,57 @@ export function LatestVersionCard({
   mcVersion,
   jarUrl,
 }: LatestVersionCardProps) {
+  const [copied, setCopied] = useState(false);
+
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(jarUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard unavailable — user can still click Download
+    }
+  };
+
   return (
-    <Card className="bg-card border-border ring-2 ring-yellow-400 mb-4">
-      <CardContent className="flex flex-col md:flex-row md:items-center gap-4 p-4">
-        <div className="flex size-12 shrink-0 items-center justify-center rounded-lg border border-yellow-400/40 bg-yellow-400/10">
-          <Box />
+    <div className="mb-2 flex flex-col gap-4 py-5 sm:flex-row sm:items-center">
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="font-mono text-sm font-medium break-all">
+            {version}
+          </span>
+          <Badge>Latest</Badge>
+          {mcVersion && (
+            <Badge variant="outline" className="font-mono">
+              MC {mcVersion}
+            </Badge>
+          )}
         </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <h3 className="font-medium text-card-foreground text-lg">
-              {version}
-            </h3>
-            <Badge className="font-mono text-xs">Latest</Badge>
-          </div>
-          <p className="text-muted-foreground text-sm">
-            {mcVersion
-              ? `Minecraft ${mcVersion} · Recommended download`
-              : "Recommended download"}
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <Button size="sm" asChild>
-            <a
-              href={jarUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1"
-            >
-              <Download />
-              Download
-            </a>
-          </Button>
-          <Button size="sm" variant="outline" asChild>
-            <a
-              href="https://github.com/DupersUnited/dupersunited-mod"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1"
-            >
-              Source
-              <ExternalLink />
-            </a>
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Recommended download.
+        </p>
+      </div>
+      <div className="flex shrink-0 gap-2">
+        <Button size="sm" asChild>
+          <a href={jarUrl} target="_blank" rel="noopener noreferrer">
+            <Download data-icon="inline-start" />
+            Download
+          </a>
+        </Button>
+        <Button
+          size="sm"
+          variant="outline"
+          onClick={copyLink}
+          aria-label="Copy download link"
+        >
+          {copied ? (
+            <Check data-icon="inline-start" />
+          ) : (
+            <Copy data-icon="inline-start" />
+          )}
+          {copied ? "Copied" : "Copy link"}
+        </Button>
+      </div>
+    </div>
   );
 }
