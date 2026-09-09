@@ -12,7 +12,7 @@
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
+    --primary: oklch(0.62 0.27 350);
     --primary-foreground: oklch(0.985 0 0);
     --secondary: oklch(0.97 0 0);
     --secondary-foreground: oklch(0.205 0 0);
@@ -23,7 +23,7 @@
     --destructive: oklch(0.58 0.22 27);
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --ring: oklch(0.62 0.27 350);
     --chart-1: oklch(0.809 0.105 251.813);
     --chart-2: oklch(0.623 0.214 259.815);
     --chart-3: oklch(0.546 0.245 262.881);
@@ -47,8 +47,8 @@
     --card-foreground: oklch(0.985 0 0);
     --popover: oklch(0.08 0 0);
     --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.985 0 0);
-    --primary-foreground: oklch(0.08 0 0);
+    --primary: oklch(0.75 0.24 350);
+    --primary-foreground: oklch(0.15 0.05 350);
     --secondary: oklch(0.15 0 0);
     --secondary-foreground: oklch(0.985 0 0);
     --muted: oklch(0.15 0 0);
@@ -58,10 +58,10 @@
     --destructive: oklch(0.704 0.191 22.216);
     --border: oklch(1 0 0 / 15%);
     --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.985 0 0);
+    --ring: oklch(0.75 0.24 350);
     --sidebar: oklch(0.08 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary: oklch(0.75 0.24 350);
     --sidebar-primary-foreground: oklch(0.985 0 0);
     --sidebar-accent: oklch(0.15 0 0);
     --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -121,4 +121,28 @@
   html {
     @apply font-sans;
     }
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+
+/* scroll-reveal (see components/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

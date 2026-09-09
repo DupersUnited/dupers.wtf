@@ -10,7 +10,7 @@ export function ThemeToggle() {
   };
 
   return (
-    <Button variant="outline" size="icon" className="size-12" onClick={toggle}>
+    <Button variant="outline" size="icon" onClick={toggle}>
       {theme === "light" ? (<Moon />) : (<Sun />)}
       <span className="sr-only">Toggle theme</span>
     </Button>
