@@ -14,7 +14,7 @@ export function Footer() {
               className="size-8 rounded-lg border object-cover dark:invert"
             />
             <span className="font-mono text-sm font-bold tracking-widest">
-              DUPERS<span className="text-primary">UNITED</span>
+              Dupers<span className="text-primary">United</span>
             </span>
           </div>
         </div>
