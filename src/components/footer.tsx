@@ -72,9 +72,14 @@ export function Footer() {
         </div>
       </div>
       <Separator />
-      <p className="py-6 text-center font-mono text-xs tracking-widest text-muted-foreground uppercase">
-        © {new Date().getFullYear()} DupersUnited
-      </p>
+      <div className="flex py-6 text-center font-mono text-xs text-muted-foreground justify-between">
+        <p>
+          © {new Date().getFullYear()} DupersUnited
+        </p>
+        <p>
+          Not affiliated with Mojang or Microsoft
+        </p>
+      </div>
     </footer>
   );
 }
