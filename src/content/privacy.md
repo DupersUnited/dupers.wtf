@@ -2,8 +2,8 @@
 
 Last updated: October 5, 2026
 
-Contact: the DupersUnited Discord (`discord.gg/dupes`) or the GitHub
-issue tracker for `DupersUnited/dupersunited-mod`.
+Contact: the DupersUnited Discord ([discord.gg/dupes](https://discord.gg/dupes)) or the GitHub
+issue tracker for [DupersUnited/dupersunited-mod](https://github.com/DupersUnited/dupersunited-mod).
 
 The data controller is the DupersUnited Discord community. Data requests
 are handled through a support ticket in the Discord.

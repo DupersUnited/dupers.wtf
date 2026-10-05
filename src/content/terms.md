@@ -2,8 +2,8 @@
 
 Last updated: October 5, 2026
 
-Contact: the DupersUnited Discord (`discord.gg/dupes`) or the GitHub
-issue tracker for `DupersUnited/dupersunited-mod`.
+Contact: the DupersUnited Discord ([discord.gg/dupes](https://discord.gg/dupes)) or the GitHub
+issue tracker for [DupersUnited/dupersunited-mod](https://github.com/DupersUnited/dupersunited-mod).
 
 These Terms from the DupersUnited Discord community cover
 the official DupersUnited mod builds and our official
@@ -59,7 +59,7 @@ they changed.
 
 ## 4. Open-source license
 
-The mod client is licensed under GPL-3.0-or-later (see `LICENSE` in the
+The mod client is licensed under GPL-3.0-or-later (see [LICENSE](https://github.com/DupersUnited/dupersunited-mod/blob/main/LICENSE) in the
 repository). In short: you may run, copy, modify, and share it (including
 for a fee) as long as you preserve copyright and license notices, state
 your changes, provide the full corresponding source code, and license the
