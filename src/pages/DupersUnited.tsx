@@ -17,6 +17,7 @@ import {
   extractUniqueMcVersions,
   MAVEN_BASE,
 } from "@/lib/maven";
+import { useSEO } from "@/lib/seo";
 
 const PAGE_SIZE = 8;
 
@@ -37,6 +38,11 @@ const INSTALL_STEPS = [
 ];
 
 export default function DupersUnitedPage() {
+  useSEO(
+    "DupersUnited mod downloads",
+    "Download the free DupersUnited Fabric mod. Pick a build for your Minecraft version and install in 3 steps.",
+    "/dupersunited"
+  );
   const { versions, latest, release, loading, error } = useMavenVersions();
   // null = user hasn't picked yet → default to newest MC version once loaded
   const [selectedMc, setSelectedMc] = useState<string | null>(null);

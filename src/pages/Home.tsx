@@ -8,8 +8,14 @@ import { DUText } from "@/components/du-text";
 import { Reveal } from "@/components/reveal";
 import { PARTNERS } from "@/lib/data";
 import { BrandLogo } from "@/components/brand-logo";
+import { useSEO } from "@/lib/seo";
 
 export default function HomePage() {
+  useSEO(
+    "Discord community against pay-to-win gambling servers",
+    "DupersUnited is a Discord community standing against pay-to-win gambling servers. Get the free Fabric dupe-hunting mod and join the Discord.",
+    "/"
+  );
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />

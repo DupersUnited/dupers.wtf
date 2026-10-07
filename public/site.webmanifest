@@ -1,0 +1,14 @@
+{
+  "name": "DupersUnited",
+  "short_name": "DupersUnited",
+  "description": "We break the economy to fix the game. Free Fabric dupe-hunting mod.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    { "src": "/assets/logo.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/favicon.png", "sizes": "64x64", "type": "image/png" }
+  ]
+}

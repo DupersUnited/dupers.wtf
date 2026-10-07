@@ -9,8 +9,14 @@ import { DUText } from "@/components/du-text";
 import { Reveal } from "@/components/reveal";
 import { MODS } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { useSEO } from "@/lib/seo";
 
 export default function ModsPage() {
+  useSEO(
+    "Essential mods",
+    "Everything you need to start dupe hunting in Minecraft: DupersUnited, Fabric API, and the essential client mods.",
+    "/mods"
+  );
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
