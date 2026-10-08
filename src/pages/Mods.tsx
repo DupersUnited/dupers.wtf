@@ -13,7 +13,7 @@ import { useSEO } from "@/lib/seo";
 
 export default function ModsPage() {
   useSEO(
-    "Essential mods",
+    "DupersUnited Essential mods",
     "Everything you need to start dupe hunting in Minecraft: DupersUnited, Fabric API, and the essential client mods.",
     "/mods"
   );

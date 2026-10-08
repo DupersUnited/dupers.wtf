@@ -12,7 +12,7 @@ import { useSEO } from "@/lib/seo";
 
 export default function HomePage() {
   useSEO(
-    "Discord community against pay-to-win gambling servers",
+    "DupersUnited",
     "DupersUnited is a Discord community standing against pay-to-win gambling servers. Get the free Fabric dupe-hunting mod and join the Discord.",
     "/"
   );

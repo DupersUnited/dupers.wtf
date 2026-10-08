@@ -43,14 +43,14 @@ function LegalLayout({
 }
 
 export function TermsPage() {
-  useSEO("Terms of Service", "DupersUnited Terms of Service.", "/terms");
+  useSEO("DupersUnited Mod Terms of Service", "DupersUnited Terms of Service.", "/terms");
   return (
     <LegalLayout source={terms} other={{ to: "/privacy", label: "Privacy Policy" }} />
   );
 }
 
 export function PrivacyPage() {
-  useSEO("Privacy Policy", "DupersUnited Privacy Policy.", "/privacy");
+  useSEO("DupersUnited Mod Privacy Policy", "DupersUnited Privacy Policy.", "/privacy");
   return (
     <LegalLayout source={privacy} other={{ to: "/terms", label: "Terms of Service" }} />
   );

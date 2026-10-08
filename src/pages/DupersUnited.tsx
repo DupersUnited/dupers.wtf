@@ -39,7 +39,7 @@ const INSTALL_STEPS = [
 
 export default function DupersUnitedPage() {
   useSEO(
-    "DupersUnited mod downloads",
+    "DupersUnited Mod",
     "Download the free DupersUnited Fabric mod. Pick a build for your Minecraft version and install in 3 steps.",
     "/dupersunited"
   );

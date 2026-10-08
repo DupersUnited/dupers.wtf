@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export function useSEO(title: string, description: string, path = "/") {
   useEffect(() => {
-    const full = title === "DupersUnited" ? title : `${title} — DupersUnited`;
+    const full = title === "DupersUnited" ? title : `${title} - DupersUnited`;
     const url = `https://dupers.wtf${path}`;
 
     document.title = full;
